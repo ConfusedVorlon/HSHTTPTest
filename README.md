@@ -22,7 +22,9 @@ Test an address returns 200 status code, and contains expected content:
 ```
 
 Test your 404 page works
-```[self doTestAddress:@"http://hobbyistsoftware.com/notAPage"
+
+```
+[self doTestAddress:@"http://hobbyistsoftware.com/notAPage"
                 stopDownloadAfter:0
           allowRedirect:YES
                validate:^(HSHTTPTest *test) {
@@ -34,7 +36,8 @@ Test your 404 page works
 ```
 
 Test that a redirect goes to the right place
-```[self doTestAddress:@"http://forum.hobbyistsoftware.com"
+```
+[self doTestAddress:@"http://forum.hobbyistsoftware.com"
                 stopDownloadAfter:0
           allowRedirect:YES
                validate:^(HSHTTPTest *test) {
@@ -50,6 +53,7 @@ Test that a redirect goes to the right place
 
 Test that redirect ends up at the right place, and that content type is correct
 (without downloading the full file)
+```
 [self do200TestAddress:@"http://hobbyistsoftware.com//Downloads/Watchover/latest-mac.php"
                        stopDownloadAfter:5000
                  allowRedirect:YES
@@ -64,6 +68,7 @@ Test that redirect ends up at the right place, and that content type is correct
                           XCTAssertTrue([lastAddress containsString:@"Downloads/Watchover/Versions/Watchover_"]);
                           
                       }];
+```
 
 
 Run your tests in Xcode (Menu/Product/Test)
